@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>一言掲示板 - 投稿一覧（テスト）</title>
+    <title>一言掲示板 - 投稿一覧</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
