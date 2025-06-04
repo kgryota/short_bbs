@@ -21,17 +21,6 @@
         // DSN（接続文字列）
         $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
 
-        $user_name = $_POST['username'];
-
-        if(!$user_name){
-            $pdo = new PDO($dsn, $user, $pass);
-            foreach ($pdo->query('SELECT * FROM user') as $row) {
-                $password = $row['password'];
-            }
-            if($_POST['password'] == $row['password']){
-
-            }
-        };
 
         // 接続とクエリ実行
         $pdo = new PDO($dsn, $user, $pass);
