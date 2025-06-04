@@ -2,11 +2,11 @@
 session_start();
 
 // DB接続設定
-$host = 'localhost';
-$dbname = 'your_database_name';
-$user = 'your_db_user';
-$password = 'your_db_password';
-
+$host = 'mysql321.phy.lolipop.lan';
+        $dbname = 'LAA1554899-shortbbs';
+        $user = 'LAA1554899';
+        $pass = 'teamproject';
+        $charset = 'utf8mb4';
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
