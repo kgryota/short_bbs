@@ -21,6 +21,10 @@
         // DSN（接続文字列）
         $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         // 接続とクエリ実行
         $pdo = new PDO($dsn, $user, $pass);
         foreach ($pdo->query('SELECT content FROM comment') as $row) {
