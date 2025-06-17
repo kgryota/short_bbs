@@ -24,29 +24,16 @@
 
         // 接続とクエリ実行
         $pdo = new PDO($dsn, $user, $pass);
-        foreach ($pdo->query('SELECT user.id, comment.content FROM comment JOIN user ON comment.user_id = user.id;') as $row) {
+        foreach ($pdo->query('SELECT user.id, comment.content,username FROM comment JOIN user ON comment.user_id = user.id;') as $row) {
             echo "<div class='post'>";
-            echo "<p><strong>$name</strong> さん ($time)</p>";
+            echo "<p><strong> ". $row['username'] . "</p>";
             echo "<p>" . $row['content'] . "</p>";
             echo "</div><hr>";
-            echo $row['content'] . "<br>";
         }
 
 
 
-    $filename = 'comments.txt';
-    if (file_exists($filename)) {
-        $lines = file($filename, FILE_IGNORE_NEW_LINES);
-        foreach (array_reverse($lines) as $line) {
-            [$time, $name, $comment] = explode("\t", $line);
-            echo "<div class='post'>";
-            echo "<p><strong>$name</strong> さん ($time)</p>";
-            echo "<p>" . nl2br($comment) . "</p>";
-            echo "</div><hr>";
-        }
-    } else {
-        echo "<p>まだ投稿がありません。</p>";
-    }
+
     ?>
 </body>
 </html>
