@@ -11,7 +11,7 @@
         <input type="text" id="username" name="username" value=テストメンバー required><br><br>
 
         <label for="password">パスワード：</label>
-        <input type="password" id="password" name="password" value= test required><br><br>
+        <input type="password" id="password" name="password" value=test required><br><br>
 
         <button type="submit">ログイン</button>
     </form>
