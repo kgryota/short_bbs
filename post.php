@@ -1,9 +1,12 @@
 <?php
+session_start();
+$_SESSION['id'] = '1';
+$_SESSION['name'] = 'テストユーザー';
 
 $name = htmlspecialchars($_POST['name'] ?? '名無し');
 $comment = htmlspecialchars($_POST['comment'] ?? '');
 $time = date('Y-m-d H:i:s');
-
+$user_id = $_SESSION['id'];
 // データベース接続情報
 $host = 'mysql321.phy.lolipop.lan';
 $dbname = 'LAA1554899-shortbbs';
@@ -21,12 +24,11 @@ try {
     ]);
 
     // SQL文を準備して実行
-    $sql = "INSERT INTO comment (name, comment, time) VALUES (:name, :comment, :time)";
+    $sql = "INSERT INTO comment (user_id, content) VALUES (:user_id, :comment)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
-        ':name' => $name,
+        ':user_id' => $user_id,
         ':comment' => $comment,
-        ':time' => $time,
     ]);
 
     echo "投稿が成功しました。";
