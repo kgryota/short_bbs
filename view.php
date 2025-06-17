@@ -24,7 +24,7 @@
 
         // 接続とクエリ実行
         $pdo = new PDO($dsn, $user, $pass);
-        foreach ($pdo->query('SELECT content FROM comment') as $row) {
+        foreach ($pdo->query('SELECT user.id, comment.content FROM comment JOIN user ON comment.user_id = user.id;') as $row) {
             echo "<div class='post'>";
             echo "<p><strong>$name</strong> さん ($time)</p>";
             echo "<p>" . $row['content'] . "</p>";

@@ -21,7 +21,7 @@ try {
     ]);
 
     // SQL文を準備して実行
-    $sql = "INSERT INTO posts (name, comment, time) VALUES (:name, :comment, :time)";
+    $sql = "INSERT INTO comment (name, comment, time) VALUES (:name, :comment, :time)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         ':name' => $name,
