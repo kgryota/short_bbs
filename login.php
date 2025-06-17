@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>ログイン</h1>
-    <form action="/view.php" method="post">
+    <form action="view.php" method="post">
         <label for="username">ユーザー名：</label>
         <input type="text" id="username" name="username" value=テストメンバー required><br><br>
 
